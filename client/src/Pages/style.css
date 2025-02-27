@@ -1,0 +1,107 @@
+/* Thiết lập box-sizing cho tất cả các phần tử */
+*, *::before, *::after {
+    box-sizing: border-box;
+}
+
+/* Bỏ margin và padding cho body */
+body {
+    margin: 0; /* Bỏ margin */
+    padding: 0; /* Bỏ padding */
+    overflow-x: hidden; /* Ẩn cuộn ngang nếu có */
+}
+
+.product-management {
+    display: grid; /* Hiển thị dưới dạng lưới */
+    grid-template-columns: 20% 80%; /* 20% cho side-nav, 80% cho nội dung */
+    height: 100vh; /* Chiều cao đầy đủ */
+    gap: 1rem; /* Thêm khoảng cách giữa các cột */
+}
+
+.side-nav {
+    background-color: #f8f9fa; /* Màu nền cho side-nav */
+    height: 100%; /* Chiều cao 100% */
+    padding: 1rem; /* Thêm padding để căn chỉnh tốt hơn */
+    box-shadow: 2px 0 5px rgba(0, 0, 0, 0.1); /* Thêm bóng nhẹ để tạo chiều sâu */
+}
+
+.content {
+    padding: 1rem; /* Thêm padding bên trong nội dung */
+    display: flex; /* Hiển thị dưới dạng flex */
+    flex-direction: column; /* Hướng theo cột */
+    gap: 1rem; /* Thêm khoảng cách giữa các phần */
+}
+
+.product-section {
+    display: grid; /* Hiển thị dưới dạng lưới */
+    grid-template-columns: 65% 30%; /* 60% cho bảng sản phẩm, 30% cho form */
+    gap: 1rem; /* Khoảng cách giữa bảng sản phẩm và form */
+}
+
+.product-table {
+    background-color: white; /* Màu nền cho bảng sản phẩm */
+    border: 1px solid #e0e0e0; /* Đường viền cho bảng sản phẩm */
+    padding: 1rem; /* Thêm padding */
+    border-radius: 0.5rem; /* Bo góc cho bảng sản phẩm */
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Thêm bóng nhẹ để tạo chiều sâu */
+    max-height: 80vh; /* Ngăn không cho bảng quá lớn */
+    overflow-y: auto; /* Cho phép cuộn nếu bảng quá lớn */
+}
+
+.product-form {
+    background-color: white; /* Màu nền cho form sản phẩm */
+    border: 1px solid #e0e0e0; /* Đường viền cho form sản phẩm */
+    padding: 1rem; /* Thêm padding */
+    border-radius: 0.5rem; /* Bo góc cho form sản phẩm */
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Thêm bóng cho form */
+}
+
+.image-preview-container {
+    border: 2px dashed #ccc; /* Đường viền chấm cho vùng xem trước hình ảnh */
+    background-color: #f9f9f9; /* Màu nền cho vùng xem trước hình ảnh */
+    display: flex; /* Hiển thị dưới dạng flex */
+    justify-content: center; /* Căn giữa theo chiều ngang */
+    align-items: center; /* Căn giữa theo chiều dọc */
+    height: 150px; /* Chiều cao cho vùng xem trước hình ảnh */
+    width: 150px; /* Chiều rộng cho vùng xem trước hình ảnh */
+    margin: 0 auto; /* Căn giữa vùng xem trước hình ảnh */
+    overflow: hidden; /* Ẩn các phần bị tràn ra ngoài */
+    border-radius: 0.5rem; /* Bo góc cho vùng xem trước hình ảnh */
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1); /* Bóng nhẹ cho vùng xem trước hình ảnh */
+}
+
+.image-preview {
+    max-height: 100%; /* Chiều cao tối đa cho hình ảnh */
+    max-width: 100%; /* Chiều rộng tối đa cho hình ảnh */
+    object-fit: cover; /* Đảm bảo hình ảnh đầy đủ trong vùng xem trước */
+}
+
+.nav-item {
+    padding: 0.75rem 1.25rem; /* Tăng padding để có khoảng cách tốt hơn */
+    border-radius: 0.5rem; /* Bo góc cho các mục điều hướng */
+    margin-bottom: 0.5rem; /* Thêm khoảng cách giữa các mục điều hướng */
+    transition: background-color 0.3s ease, color 0.3s ease; /* Hiệu ứng chuyển màu mượt mà */
+}
+
+.nav-item.active {
+    background-color: #ec4899; /* Nền nổi bật cho mục điều hướng đang hoạt động */
+    color: white; /* Màu chữ cho mục điều hướng đang hoạt động */
+}
+
+.nav-item:hover {
+    background-color: #e5e7eb; /* Hiệu ứng hover nhẹ cho mục điều hướng */
+}
+
+.nav-item a {
+    text-decoration: none; /* Bỏ gạch chân cho các liên kết */
+    color: inherit; /* Kế thừa màu sắc từ mục điều hướng */
+}
+
+@media screen and (max-width: 768px) {
+    .product-management {
+        grid-template-columns: 1fr; /* Chồng lên side-nav và nội dung trên màn hình nhỏ */
+    }
+
+    .product-section {
+        grid-template-columns: 1fr; /* Chồng lên bảng và form trên màn hình nhỏ */
+    }
+}
